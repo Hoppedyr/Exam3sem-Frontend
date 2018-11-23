@@ -1,7 +1,7 @@
-import { LogInURL, URLSwapi } from "../settings";
+import { LogInURL, URLRestaurants } from "../settings";
 
 const URL = LogInURL;
-const URL2 = URLSwapi;
+const URL2 = URLRestaurants;
 
 function handleHttpErrors(res) {
   if (!res.ok) {
@@ -30,7 +30,7 @@ class ApiFacade {
 
   getRestaurants = async () => {
     const options = this.makeOptions("GET", true);
-    return await fetch("http://localhost:8080/exam3sem/api/info/restaurants", options).then(handleHttpErrors);
+    return await fetch(URL2, options).then(handleHttpErrors);
   }
 
   fetchSwapi = () => {
