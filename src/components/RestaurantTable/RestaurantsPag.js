@@ -159,7 +159,7 @@ const columns =
         //     // filter: textFilter(),
         // },
         {
-            dataField: 'cityInfoDTO.city',
+            dataField: 'cityInfoDTO.cityZip',
             text: 'Cities',
             // filter: textFilter(),
             filter: textFilter({
