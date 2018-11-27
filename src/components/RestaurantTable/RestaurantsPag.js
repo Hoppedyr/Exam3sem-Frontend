@@ -74,12 +74,12 @@ const expandRow = {
 
     renderer: row => (
         <div>
-            <h1>{row.name} - Contact Info</h1>
+            <h1>{row.restName} - Contact Info</h1>
             <hr></hr>
             <h3>Phone Number: {row.phone}</h3>
             <h3>Website: <a fontSize='200%' href={row.website}>{row.website}</a></h3>
             <br/>
-            <ModalView name={row.name}/>
+            <ModalView name={row.restName} menuUrl={row.pictureUrl}/>
         </div>
     ),
     showExpandColumn: true,

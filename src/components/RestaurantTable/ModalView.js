@@ -62,9 +62,6 @@ export default class ModalView extends React.Component {
       transform: this.state.transform
     };
 
-
-    let src = "https://www.pizzabysam.com/sites/default/files/imagecache/menu_zoom/SamsMenu_nocoupons-1.jpg";
-
     return (
       <div>
         <button onClick={this.openModal} style={modalButtonStyle}>See Menu</button>
@@ -77,7 +74,7 @@ export default class ModalView extends React.Component {
         >
           <h2 ref={subtitle => this.subtitle = subtitle}>{this.props.name} - Menu</h2>
           <div>
-            <img src={src} alt="Menu Missing" style={imageStyle} />
+            <img src={this.props.menuUrl} alt="Menu Missing" style={imageStyle} />
           </div>
           {/* <button onClick={this.closeModal}>close</button> */}
         </Modal>
