@@ -117,8 +117,8 @@ const columns =
             hidden: true
         },
         {
-            dataField: 'name',
-            text: 'Names',
+            dataField: 'restName',
+            text: 'Name',
             // filter: textFilter(),
             filter: textFilter({
                 getFilter: (filter) => {
@@ -128,7 +128,7 @@ const columns =
             sort: true
         },
         {
-            dataField: 'foodtype',
+            dataField: 'foodType',
             text: 'Food Types',
             // filter: textFilter(),
             filter: textFilter({
@@ -144,8 +144,8 @@ const columns =
         //     // filter: textFilter(),
         // }, 
         {
-            dataField: 'address',
-            text: 'Addresses',
+            dataField: 'street',
+            text: 'Address',
             // filter: textFilter(),
             filter: textFilter({
                 getFilter: (filter) => {
@@ -159,8 +159,8 @@ const columns =
         //     // filter: textFilter(),
         // },
         {
-            dataField: 'cityInfoDTO.cityZip',
-            text: 'Cities',
+            dataField: 'cityInfo.cityZip',
+            text: 'City',
             // filter: textFilter(),
             filter: textFilter({
                 getFilter: (filter) => {
