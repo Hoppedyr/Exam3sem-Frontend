@@ -39,7 +39,7 @@ class CRUDTable extends Component {
 
   onEdit = (restaurant) => {
     const {id, restName, foodType, website, street, phone, pictureUrl, cityInfo} = restaurant;
-    this.setState({editRestaurant:{restName, foodType ,id ,website,street,phone, pictureUrl, cityInfo}});
+    this.setState({editRestaurant:{restName, foodType ,id , website, street, phone, pictureUrl, cityInfo}});
   }
 
   onEditSubmit = async (restaurant) => {
