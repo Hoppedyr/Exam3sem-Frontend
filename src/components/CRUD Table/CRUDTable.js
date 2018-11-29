@@ -9,35 +9,41 @@ class CRUDTable extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      persons: [],           
-      editPerson:
+      restaurants: [],           
+      editRestaurant:
       {
-        id:"",
-        age:"",
-        name:"",
-        gender:"",
-        email:""
-      }};
+        id: "",
+        restName: "",
+        foodType: "",
+        website: "",
+        street: "",
+        phone: "",
+        pictureUrl: "",
+        cityInfo: {
+          zip: "",
+          city: ""
+        }
+      }
+    };
   }
 
   async componentDidMount() {
     try {
-      const persons = await facade.getPersons();
-      this.setState({ persons: persons });
-
+      const restaurants = await facade.getRestaurants();
+      this.setState({ restaurants });
+      console.log("Restaurants -> ",this.state.restaurants);
     } catch (err) {
       alert("REMOVE ME " + err);
     }
   }
 
-  onEdit = (person) => {
-    const {id, name, age, gender, email} = person;
-    // console.log(person);
-    this.setState({editPerson:{name:name, age:age ,id:id ,gender:gender ,email:email}});
+  onEdit = (restaurant) => {
+    const {id, restName, foodType, website, street, phone, pictureUrl, cityInfo} = restaurant;
+    this.setState({editRestaurant:{restName, foodType ,id ,website,street,phone, pictureUrl, cityInfo}});
   }
 
-  onEditSubmit = async (person) => {
-    await facade.editPerson(person);
+  onEditSubmit = async (restaurant) => {
+    await facade.editRestaurant(restaurant);
     this.save();
   }
 
@@ -45,13 +51,13 @@ class CRUDTable extends Component {
     event.preventDefault();
     const id = event.target.id;
     // alert('A name was Deleted:' + id);
-    await facade.deletePerson(id);
+    await facade.deleteRestaurant(id);
     this.save();
   }
 
-  onAdd = async (person) => {
+  onAdd = async (restaurant) => {
     // alert('A person was add:' + JSON.stringify(newPerson));
-    await facade.addPerson(person);
+    await facade.addRestaurant(restaurant);
     this.save();
   }
 
@@ -70,8 +76,8 @@ class CRUDTable extends Component {
   // }
 
   save = async () => {
-    const persons = await facade.getPersons();
-    this.setState({ persons: persons });
+    const restaurants = await facade.getRestaurants();
+    this.setState({ restaurants:restaurants});
     // alert("SAVE");
   }
 
@@ -82,14 +88,14 @@ class CRUDTable extends Component {
         <h3>Quick Start Project</h3>
         <div className="row">
           <div className="col-md-6">
-            <h3>All Persons</h3>
-            <AllPersons persons={this.state.persons} onEdit={this.onEdit} onDelete={this.onDelete} />
+            <h3>All Restaurants</h3>
+            <AllPersons restaurants={this.state.restaurants} onEdit={this.onEdit} onDelete={this.onDelete} />
           </div>
           <div className="col-md-2">
           </div>
           <div className="col-md-5" >
-            <h3 style={{ textAlign: "center" }}>Add Persons</h3>
-            <AddEditPerson key={this.state.editPerson.id} onAdd={this.onAdd} onEdit={this.onEdit} onEditSubmit={this.onEditSubmit} verifyID={this.verifyID} editPerson={this.state.editPerson}/>
+            <h3 style={{ textAlign: "center" }}>Add / Edit Restaurants</h3>
+            <AddEditPerson key={this.state.editRestaurant.id} onAdd={this.onAdd} onEdit={this.onEdit} onEditSubmit={this.onEditSubmit} verifyID={this.verifyID} restaurant={this.state.editRestaurant}/>
           </div>
         </div>
 

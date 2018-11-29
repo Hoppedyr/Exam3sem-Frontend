@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CRUDTable from "../CRUD Table/CRUDTable";
 
 export default class AdminView extends Component {
 
@@ -13,6 +14,7 @@ export default class AdminView extends Component {
             return (
                 <div>
                     <h1>HEY</h1>
+                    <CRUDTable/>
                 </div>
             );
         }

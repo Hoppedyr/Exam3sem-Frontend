@@ -1,6 +1,4 @@
-import {CRUDTABLEURL} from "../settings";
-
-const URL = CRUDTABLEURL;
+import {getRestaurants, getRestaurantById, deleteRestaurant, createRestaurant, editRestaurant} from "../settings";
 
 //The two methods below, are the utility-methods introduced here (use them if you like):
 //https://docs.google.com/document/d/1hF9P65v_AJKCjol_gFkm3oZ1eVTuOKc15V6pcb3iFa8/edit?usp=sharing 
@@ -33,27 +31,32 @@ class DataFacade {
   // getPersons() {
   //   return fetch(URL).then(handleHttpErrors)
   // }
-  async addPerson(person) {
-    return await fetch(URL, makeOptions("POST", person)).then(handleHttpErrors);
-  }
-  // In order to use await, a method must be "marked" with async
-  async getPersons() {
-    return await fetch(URL).then(handleHttpErrors)
+
+  //FINISHED
+  async addRestaurant(restaurant) {
+    return await fetch(createRestaurant, makeOptions("POST", restaurant)).then(handleHttpErrors);
   }
 
-  async deletePerson(id){
-    return await fetch(URL + "/" + id, makeOptions("DELETE")).then(handleHttpErrors);
+  // In order to use await, a method must be "marked" with async
+  async getRestaurants() {
+    return await fetch(`${getRestaurants}`).then(handleHttpErrors)
   }
-  async getPerson(id){
-    return await fetch(URL + "/" + id).then(handleHttpErrors);
+
+  // NOT DONE YET
+  async deleteRestaurant(id){
+    return await fetch(`${deleteRestaurant+id}`, makeOptions("DELETE")).then(handleHttpErrors);
   }
-  async editPerson(person) {
-    console.log(person)
-    return await fetch(URL + "/" + person.id, makeOptions("PUT", person)).then(handleHttpErrors);
+
+  //FINISHED
+  async getRestaurant(id){
+    return await fetch(`${getRestaurantById+"/"+id}`).then(handleHttpErrors);
+  }
+
+  async editRestaurant(restaurant) {
+    console.log(restaurant)
+    return await fetch(`${editRestaurant+"/"+restaurant.id}`, makeOptions("PUT", restaurant)).then(handleHttpErrors);
     // return await fetch(`${URL}/${person.id}`, makeOptions("PUT", person)).then(handleHttpErrors);
   }
-  
-
 }
 
 export default new DataFacade();
