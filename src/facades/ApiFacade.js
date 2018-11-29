@@ -1,16 +1,21 @@
 import { LogInURL, URLRestaurants } from "../settings";
+import jwtdecode from "jwt-decode";
 
 const URL = LogInURL;
 const URL2 = URLRestaurants;
 
-function handleHttpErrors(res) {
+async function handleHttpErrors(res) {
   if (!res.ok) {
-    return Promise.reject({ status: res.status, fullError: res.json() })
+    return Promise.reject({ status: res.status, fullError: await res.json() })
   }
   return res.json();
 }
 
 class ApiFacade {
+  constructor() {
+    this.username = null;
+  }
+
   makeOptions(method, addToken, body) {
     var opts = {
       method: method,
@@ -40,30 +45,47 @@ class ApiFacade {
 
   fetchData = () => {
     const options = this.makeOptions("GET", true); //True add's the token
-    return fetch(URL + "/api/info/user", options).then(handleHttpErrors);
+    return fetch(URL + "/api/info/admin", options).then(handleHttpErrors);
   }
 
   login = (user, pass) => {
     const options = this.makeOptions("POST", true, { username: user, password: pass });
     return fetch(URL + "/api/login", options, true)
       .then(handleHttpErrors)
-      .then(res => { this.setToken(res.token) })
+      .then(res => { 
+        this.username = user;
+        this.setToken(res.token)
+      })
   }
 
   setToken = (token) => {
     localStorage.setItem('jwtToken', token)
+    this.readToken()
   }
   getToken = () => {
     return localStorage.getItem('jwtToken')
   }
+  readToken = () =>{
+    var decoded = jwtdecode(this.getToken());
+    console.log(decoded);
+    this.username  = decoded.username
+  }
+
   loggedIn = () => {
     const loggedIn = this.getToken() != null;
     return loggedIn;
   }
+  
   logout = () => {
     localStorage.removeItem("jwtToken");
+    this.username = null;
+    
   }
+
 
 }
 const facade = new ApiFacade();
+if (facade.getToken() !== null)
+ facade.readToken();
+
 export default facade;
