@@ -67,20 +67,17 @@ class ApiFacade {
   }
   readToken = () =>{
     var decoded = jwtdecode(this.getToken());
-    console.log(decoded);
     this.username  = decoded.username
   }
 
   loggedIn = () => {
     const loggedIn = this.getToken() != null;
-    console.log(loggedIn + "" +  "apiface")
     return loggedIn;
   }
 
   logout = () => {
     localStorage.removeItem("jwtToken");
     this.username = null;
-    
   }
 
 

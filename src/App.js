@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, NavLink, Redirect } from "react-router-dom";
 import LogIn from "./components/LogIn/LogIn";
 import LoggedIn from "./components/LogIn/LoggedIn";
-// import CRUDTable from "./components/CRUD Table/CRUDTable";
+ import CRUDTable from "./components/CRUD Table/CRUDTable";
 import facade from "./facades/ApiFacade";
 
 import ShowTable from "./components/RestaurantTable/ShowSimpleSwapiTable";
@@ -46,34 +46,36 @@ class App extends Component {
     //     if(facade.loggedIn == true)
     //     this.setState({hasLoggedIn: true})
     // }
-    
-    checkifLoginIsTrue = () => {
-        if(facade.loggedIn == true)
-        {
+
+/*     checkifLoginIsTrue = () => {
+        console.log(facade.loggedIn);
+        if (facade.loggedIn == true) {
             console.log(facade.loggedIn + "" + "else facade.loggedin true");
-            this.setState({hasLoggedIn: true})
+            this.setState({ hasLoggedIn: true })
             console.log(this.state.hasLoggedIn + "" + "else hasloggedn true");
         }
-        else this.setState({hasLoggedIn: false})
+        else this.setState({ hasLoggedIn: false })
         console.log(this.state.hasLoggedIn + "" + "else statement called")
-    }
-    
-     Admin = (facade) => {
-        console.log(facade.loggedIn() + "" + "before if")
-        if(facade.loggedIn() == true)
-        {
-            console.log(facade.loggedIn() + "" + "else facade.loggedin true");
-            this.setState({hasLoggedIn: true})
-            console.log(this.state.hasLoggedIn + "" + "else hasloggedn true");
+    } */
+
+    Admin = () => {
+        console.log("Admin Method -> ",facade.loggedIn())
+        if (facade.loggedIn() === true) {
+            return (
+                <div>
+                <CRUDTable/>
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <h2>Admin Page</h2>
+                    <p>Not logged in </p>
+                </div>
+            );
         }
-        return (
-    <div>
-        <h2>Admin Page</h2>
-        <p>lad mig see mine data</p>
-    </div>
-    
-        );
-    
+
+
     }
     render() {
         return (
@@ -112,14 +114,13 @@ class App extends Component {
                                 )}
                         </ul>
                         <hr />
-                        {console.log(this.state.hasLoggedIn)}
-m
-                        <Route exacmt path="/"m component={Home} />m
-                        <Routem path="/about" componemnt={About}m />
-                        <Route path="/topics" componenmt={Topics} />
-                        <Roumte >\m</Route>path="/lomgin" remndemr={() => <LogIn login={this.adminLogin} />} />
+
+                        <Route exact path="/" component={Home} />
+                        <Route path="/about" component={About} />
+                        <Route path="/topics" component={Topics} />
+                        <Route path="/login" render={() => <LogIn login={this.adminLogin} />} />
                         {/* <Route path="m/admmin" component= {mAdmin}/> */}
-                        {this.state.hasLoggedIn ? <Romute path="/admin"  \m/>} /> : null}
+                        {facade.loggedIn ? <Route path="/admin" component={this.Admin} /> : null}
 
                     </div>
                 </Router>

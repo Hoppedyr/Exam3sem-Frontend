@@ -85,7 +85,6 @@ class CRUDTable extends Component {
   render() {
     return (
       <div style={{ margin: 20, width: "100%" }}>
-        <h3>Quick Start Project</h3>
         <div className="row">
           <div className="col-md-6">
             <h3>All Restaurants</h3>
