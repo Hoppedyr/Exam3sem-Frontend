@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-class LogIn extends Component {
+export default class LogIn extends Component {
   constructor(props) {
     super(props);
     this.state = { username: "", password: "" }
@@ -19,30 +19,15 @@ class LogIn extends Component {
         <form onSubmit={this.login} onChange={this.onChange} >
           <input placeholder="User Name" id="username" />
           <input type="password" placeholder="Password" id="password" />
-          <button>Login</button>
+          <input type="submit" value="Login" />
         </form>
       </div>
     )
   }
 }
- class LoggedIn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { dataFromServer: "Admin Logged in" };
-  }
-  componentDidMount() {
-    this.props.facade.fetchData().then(res=> this.setState({dataFromServer: res}));
-  }
-  render() {
-    return (
-      <div>
-        <h2>Data Received from server</h2>
-        <h3>{this.state.dataFromServer}</h3>
-      </div>
-    )
-  }
-}
 
+
+/*
 export default class LoginMainView extends Component {
   constructor(props) {
     super(props);
@@ -68,7 +53,7 @@ export default class LoginMainView extends Component {
     )
   }
 }
-
+*/
 /* import React, { Component } from "react"
 import facade from "../../facades/ApiFacade";
 
