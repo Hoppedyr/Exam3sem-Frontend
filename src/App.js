@@ -8,6 +8,7 @@ import facade from "./facades/ApiFacade";
 import ShowTable from "./components/RestaurantTable/ShowSimpleSwapiTable";
 import SwapiTable from "./components/RestaurantTable/SwapiTable";
 import RestaurantsPag from "./components/RestaurantTable/RestaurantsPag";
+import { CRUDTABLEURL } from "./settings";
 
 
 const topics = [{ id: "topic-1", topic: <RestaurantsPag /> },
@@ -41,7 +42,39 @@ class App extends Component {
         this.setState({ hasLoggedIn: false });
     }
 
-
+    // componentDidMount()  {
+    //     if(facade.loggedIn == true)
+    //     this.setState({hasLoggedIn: true})
+    // }
+    
+    checkifLoginIsTrue = () => {
+        if(facade.loggedIn == true)
+        {
+            console.log(facade.loggedIn + "" + "else facade.loggedin true");
+            this.setState({hasLoggedIn: true})
+            console.log(this.state.hasLoggedIn + "" + "else hasloggedn true");
+        }
+        else this.setState({hasLoggedIn: false})
+        console.log(this.state.hasLoggedIn + "" + "else statement called")
+    }
+    
+     Admin = (facade) => {
+        console.log(facade.loggedIn() + "" + "before if")
+        if(facade.loggedIn() == true)
+        {
+            console.log(facade.loggedIn() + "" + "else facade.loggedin true");
+            this.setState({hasLoggedIn: true})
+            console.log(this.state.hasLoggedIn + "" + "else hasloggedn true");
+        }
+        return (
+    <div>
+        <h2>Admin Page</h2>
+        <p>lad mig see mine data</p>
+    </div>
+    
+        );
+    
+    }
     render() {
         return (
             <div>
@@ -79,12 +112,14 @@ class App extends Component {
                                 )}
                         </ul>
                         <hr />
-
-                        <Route exact path="/" component={Home} />
-                        <Route path="/about" component={About} />
-                        <Route path="/topics" component={Topics} />
-                        <Route path="/login" render={() => <LogIn login={this.adminLogin} />} />
-                        {this.state.hasLoggedIn ? <Route path="/admin" render={() => <LoggedIn facade={facade} />} /> : null}
+                        {console.log(this.state.hasLoggedIn)}
+m
+                        <Route exacmt path="/"m component={Home} />m
+                        <Routem path="/about" componemnt={About}m />
+                        <Route path="/topics" componenmt={Topics} />
+                        <Roumte >\m</Route>path="/lomgin" remndemr={() => <LogIn login={this.adminLogin} />} />
+                        {/* <Route path="m/admmin" component= {mAdmin}/> */}
+                        {this.state.hasLoggedIn ? <Romute path="/admin"  \m/>} /> : null}
 
                     </div>
                 </Router>
@@ -114,6 +149,7 @@ function Home() {
         </div>
     );
 }
+
 
 
 function Topics({ match }) {

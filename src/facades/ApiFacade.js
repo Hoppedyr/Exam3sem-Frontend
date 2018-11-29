@@ -73,9 +73,10 @@ class ApiFacade {
 
   loggedIn = () => {
     const loggedIn = this.getToken() != null;
+    console.log(loggedIn + "" +  "apiface")
     return loggedIn;
   }
-  
+
   logout = () => {
     localStorage.removeItem("jwtToken");
     this.username = null;
