@@ -67,7 +67,6 @@ export default class RestaurantTable extends Component {
     }
 }
 
-let src = "https://i.imgur.com/7KpCS0Y.jpg";
 
 
 const expandRow = {
