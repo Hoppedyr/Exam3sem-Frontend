@@ -6,7 +6,7 @@ import paginationFactory from 'react-bootstrap-table2-paginator';
 
 import React, { Component } from 'react';
 import '../../styles/App.css';
-import facade from "../../facades/ApiFacade";
+import facade from "../../facades/Facade";
 import ModalView from './ModalView';
 
 

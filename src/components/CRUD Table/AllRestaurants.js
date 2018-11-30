@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function AllPersons(props) {
+export default function AllRestaurants(props) {
   const { restaurants, onEdit, onDelete } = props;
 
   const list = restaurants.map((restaurant) =>

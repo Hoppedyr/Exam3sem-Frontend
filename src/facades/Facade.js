@@ -38,10 +38,10 @@ class ApiFacade {
     return await fetch(URL2, options).then(handleHttpErrors);
   }
 
-  fetchSwapi = () => {
-    const options = this.makeOptions("GET", true);
-    return fetch(URL2 + "2", options).then(handleHttpErrors);
-  }
+  // fetchSwapi = () => {
+  //   const options = this.makeOptions("GET", true);
+  //   return fetch(URL2 + "2", options).then(handleHttpErrors);
+  // }
 
   fetchData = () => {
     const options = this.makeOptions("GET", true); //True add's the token
@@ -57,7 +57,16 @@ class ApiFacade {
         this.setToken(res.token)
       })
   }
+  
+  loggedIn = () => {
+    const loggedIn = this.getToken() != null;
+    return loggedIn;
+  }
 
+  logout = () => {
+    localStorage.removeItem("jwtToken");
+    this.username = null;
+  }
   setToken = (token) => {
     localStorage.setItem('jwtToken', token)
     this.readToken()
@@ -67,21 +76,9 @@ class ApiFacade {
   }
   readToken = () =>{
     var decoded = jwtdecode(this.getToken());
-    console.log(decoded);
     this.username  = decoded.username
   }
-
-  loggedIn = () => {
-    const loggedIn = this.getToken() != null;
-    console.log(loggedIn + "" +  "apiface")
-    return loggedIn;
-  }
-
-  logout = () => {
-    localStorage.removeItem("jwtToken");
-    this.username = null;
-    
-  }
+  
 
 
 }

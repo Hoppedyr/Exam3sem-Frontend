@@ -1,13 +1,12 @@
 import React, { Component } from "react"
 
 
-export default class AddEditPerson extends Component {
+export default class AddEditRestaurant extends Component {
 
 
   constructor(props) {
     super(props);
     this.editPerson = this.props.editPerson;
-    console.log(props.restaurant)
     this.state = { 
       restaurant:{
       id: props.restaurant.id,
@@ -25,36 +24,16 @@ export default class AddEditPerson extends Component {
   }
 
 
-  // // componentWillReceiveProps() {
-  // static getDerivedStateFromProps() {
-  //   // console.log("state:" + JSON.stringify(this.state));
-  //   // console.log("editperson:" + JSON.stringify(this.editPerson));
-  //   this.setState(
-  //     { id: this.editPerson.id, age: this.editPerson.age, name: this.editPerson.name, gender: this.editPerson.gender, email: this.editPerson.email });
-  // }
+
 
   handleSubmit = async (evt) => {
     evt.preventDefault();
-    // const id = this.state.restaurant.id;
-
-    // console.log("Verify = " + this.props.verifyID(id)) // VERIFY
-    // console.log("state:" + JSON.stringify(this.state));
-    // console.log("editperson:" + JSON.stringify(this.props.editPerson));
-    // if (this.props.verifyID(id) == true) { // VERIFY
+ 
     if (this.state.restaurant.id !== "") {
-      // console.log("state:" + JSON.stringify(this.state));
-
-      // console.log("editPerson:" + JSON.stringify(this.props.editPerson));
-
-      // await this.setState({ id: this.props.editPerson.id });
       this.props.onEditSubmit(this.state.restaurant);
-      console.log("person edited")
     } else {
       this.props.onAdd(this.state.restaurant);
-      console.log("new person created ");
     }
-    // let newPerson = this.state;
-    // this.props.onAdd(newPerson);
   }
 
   resetForm = () => {
