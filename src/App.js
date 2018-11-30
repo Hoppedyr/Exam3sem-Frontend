@@ -68,8 +68,8 @@ class App extends Component {
                 <Router>
                     <div>
                         <ul className="topbar">
-                        <li>
-                            LOGO
+                            <li>
+                                LOGO
                         </li>
                         </ul>
                         <ul className="header">
@@ -89,23 +89,20 @@ class App extends Component {
                                     </li>
 
                                     <li className="navbartext">
-                                            <p>Logged in: {facade.username}</p>
+                                        <p>Logged in: {facade.username}</p>
                                     </li>
 
-
-
-
                                     <li className="float-right">
-                                        <NavLink to="">
-                                            <span className="glyphicon glyphicon-log-out" onClick={this.totalLogOut}> Logout</span>
+                                        <NavLink to="/" onClick={this.totalLogOut}>
+                                            <span className="glyphicon glyphicon-log-out"></span> Admin Logout
                                         </NavLink>
                                     </li>
                                 </div>
                             ) : (
                                     <li className="float-right">
                                         <NavLink to="/login">
-                                            <span className="glyphicon glyphicon-log-in"></span>  Admin Login
-                                         </NavLink>
+                                            <span className="glyphicon glyphicon-log-in"></span> Admin Login
+                                        </NavLink>
                                     </li>
                                 )}
                         </ul>

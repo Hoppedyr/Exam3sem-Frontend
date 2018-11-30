@@ -29,7 +29,9 @@ ul.header {
   background-color: #BAFBFF
  }
  
- ul.header li { float: left;}
+ ul.header li { 
+  float: left;
+}
  
  ul.header li a {
   display: block;
