@@ -67,6 +67,11 @@ class App extends Component {
             <div>
                 <Router>
                     <div>
+                        <ul className="topbar">
+                        <li>
+                            LOGO
+                        </li>
+                        </ul>
                         <ul className="header">
                             <li>
                                 <NavLink exact to="/">Home</NavLink>
@@ -83,8 +88,8 @@ class App extends Component {
                                         <NavLink to="/admin">Admin Panel</NavLink>
                                     </li>
 
-                                    <li className="navbar-text" >
-                                            <span>Logged in: {facade.username}</span>
+                                    <li className="navbartext">
+                                            <p>Logged in: {facade.username}</p>
                                     </li>
 
 
@@ -92,7 +97,7 @@ class App extends Component {
 
                                     <li className="float-right">
                                         <NavLink to="">
-                                            <span className="glyphicon glyphicon-log-out" onClick={this.totalLogOut}>Logout</span>
+                                            <span className="glyphicon glyphicon-log-out" onClick={this.totalLogOut}> Logout</span>
                                         </NavLink>
                                     </li>
                                 </div>
@@ -134,7 +139,6 @@ function About() {
             <h2>About</h2>
             <br />
             <h4>Quick Start Project for group #IkkeForLangt</h4>
-            <CRUDTable />
 
         </div>
     );

@@ -20,6 +20,14 @@ ul.header {
   overflow: hidden;
   background-color: #333;
  }
+ ul.topbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 80px 100px 80px 100px;
+  text-align: center;
+  overflow: hidden;
+  background-color: #BAFBFF
+ }
  
  ul.header li { float: left;}
  
@@ -27,9 +35,16 @@ ul.header {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 20px;
+  padding: 15px 20px 15px;
   text-decoration: none;
  }
+ ul.header li p {
+  color: white;
+  text-align: center;
+  padding: 15px 10px 0px;
+  text-decoration: none;
+ }
+
  ul.header li a:hover:not(.active) { background-color: #111;}
  
  .active { background-color: #4CAF50;}
