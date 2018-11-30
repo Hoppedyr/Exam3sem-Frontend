@@ -82,13 +82,19 @@ class App extends Component {
                                     <li>
                                         <NavLink to="/admin">Admin Panel</NavLink>
                                     </li>
-                                    <span className="navbar-text text-white">Logged in: {facade.username}</span>
 
-                                    <div className="float-right">
+                                    <li className="navbar-text" >
+                                            <span>Logged in: {facade.username}</span>
+                                    </li>
 
-                                        <button color="white" className="glyphicon glyphicon-log-out" onClick={this.totalLogOut}>Logout</button>
 
-                                    </div>
+
+
+                                    <li className="float-right">
+                                        <NavLink to="">
+                                            <span className="glyphicon glyphicon-log-out" onClick={this.totalLogOut}>Logout</span>
+                                        </NavLink>
+                                    </li>
                                 </div>
                             ) : (
                                     <li className="float-right">
@@ -104,14 +110,14 @@ class App extends Component {
                         {/* <Route path="/topics" component={Topics} /> */}
                         <Route path="/login" render={() => (
                             facade.loggedIn() ? (
-                            <Redirect to="/admin" />
-                        ) : (
-                            <LogIn login={this.adminLogin} />
-                            )
-                        )}/>
+                                <Redirect to="/admin" />
+                            ) : (
+                                    <LogIn login={this.adminLogin} />
+                                )
+                        )} />
 
 
-                            
+
                         {/* <Route path="m/admmin" component= {mAdmin}/> */}
                         {facade.loggedIn ? <Route path="/admin" component={this.Admin} /> : null}
                     </div>
