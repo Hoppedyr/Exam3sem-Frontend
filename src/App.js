@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
+import { HashRouter as Router, Route, Link, NavLink, Redirect } from "react-router-dom";
 import LogIn from "./components/LogIn/LogIn";
 
 import CRUDTable from "./components/CRUD Table/CRUDTable";
@@ -9,15 +9,11 @@ import facade from "./facades/Facade";
 import RestaurantsPag from "./components/RestaurantTable/RestaurantsPag";
 
 
-import ShowTable from "./components/RestaurantTable/ShowSimpleSwapiTable";
-import { CRUDTABLEURL } from "./settings";
-import SwapiTable from "./components/RestaurantTable/SwapiTable";
-
 
 // const topics = [{ id: "topic-1", topic: <RestaurantsPag /> },
-// { id: "topic-2", topic: <SwapiTable /> },
+// { id: "topic-2", topic: "topic 2" },
 // { id: "topic-3", topic: "Yet another Topic" },
-// { id: "topic-4", topic: <ShowTable /> }];
+// { id: "topic-4", topic: "topic 4" }];
 
 class App extends Component {
 
@@ -39,18 +35,18 @@ class App extends Component {
         }
     }
 
-    
+
     totalLogOut = () => {
         facade.logout()
         this.setState({ hasLoggedIn: false });
     }
-    
+
     Admin = () => {
-        console.log("Admin Method -> ",facade.loggedIn())
+        console.log("Admin Method -> ", facade.loggedIn())
         if (facade.loggedIn() === true) {
             return (
                 <div>
-                <CRUDTable/>
+                    <CRUDTable />
                 </div>
             );
         } else {
@@ -63,9 +59,9 @@ class App extends Component {
         }
 
 
-    
-    
-}
+
+
+    }
     render() {
         return (
             <div>
@@ -95,7 +91,7 @@ class App extends Component {
                                     </div>
                                 </div>
                             ) : (
-                                <li className="float-right">
+                                    <li className="float-right">
                                         <NavLink to="/login">
                                             <span className="glyphicon glyphicon-log-in"></span>  Admin Login
                                          </NavLink>
@@ -106,7 +102,16 @@ class App extends Component {
                         <Route exact path="/" component={Home} />
                         <Route path="/about" component={About} />
                         {/* <Route path="/topics" component={Topics} /> */}
-                        <Route path="/login" render={() => <LogIn login={this.adminLogin} />} />
+                        <Route path="/login" render={() => (
+                            facade.loggedIn() ? (
+                            <Redirect to="/admin" />
+                        ) : (
+                            <LogIn login={this.adminLogin} />
+                            )
+                        )}/>
+
+
+                            
                         {/* <Route path="m/admmin" component= {mAdmin}/> */}
                         {facade.loggedIn ? <Route path="/admin" component={this.Admin} /> : null}
                     </div>
