@@ -1,29 +1,30 @@
 import React, { Component } from "react";
-import { HashRouter as Router, Route, Link, NavLink, Redirect } from "react-router-dom";
+import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
 import LogIn from "./components/LogIn/LogIn";
-import LoggedIn from "./components/LogIn/LoggedIn";
- import CRUDTable from "./components/CRUD Table/CRUDTable";
-import facade from "./facades/ApiFacade";
+import CRUDTable from "./components/CRUD Table/CRUDTable";
+import facade from "./facades/Facade";
+
+import RestaurantsPag from "./components/RestaurantTable/RestaurantsPag";
+
 
 import ShowTable from "./components/RestaurantTable/ShowSimpleSwapiTable";
-import SwapiTable from "./components/RestaurantTable/SwapiTable";
-import RestaurantsPag from "./components/RestaurantTable/RestaurantsPag";
 import { CRUDTABLEURL } from "./settings";
+import SwapiTable from "./components/RestaurantTable/SwapiTable";
 
 
-const topics = [{ id: "topic-1", topic: <RestaurantsPag /> },
-{ id: "topic-2", topic: <SwapiTable /> },
-{ id: "topic-3", topic: "Yet another Topic" },
-{ id: "topic-4", topic: <ShowTable /> }];
+// const topics = [{ id: "topic-1", topic: <RestaurantsPag /> },
+// { id: "topic-2", topic: <SwapiTable /> },
+// { id: "topic-3", topic: "Yet another Topic" },
+// { id: "topic-4", topic: <ShowTable /> }];
 
 class App extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            hasLoggedIn: false
-        }
-    }
+    // constructor(props) {
+    //     super(props)
+    //     this.state = {
+    //         hasLoggedIn: false
+    //     }
+    // }
 
 
     adminLogin = async (username, password) => {
@@ -36,28 +37,12 @@ class App extends Component {
         }
     }
 
-
+    
     totalLogOut = () => {
         facade.logout()
         this.setState({ hasLoggedIn: false });
     }
-
-    // componentDidMount()  {
-    //     if(facade.loggedIn == true)
-    //     this.setState({hasLoggedIn: true})
-    // }
-
-/*     checkifLoginIsTrue = () => {
-        console.log(facade.loggedIn);
-        if (facade.loggedIn == true) {
-            console.log(facade.loggedIn + "" + "else facade.loggedin true");
-            this.setState({ hasLoggedIn: true })
-            console.log(this.state.hasLoggedIn + "" + "else hasloggedn true");
-        }
-        else this.setState({ hasLoggedIn: false })
-        console.log(this.state.hasLoggedIn + "" + "else statement called")
-    } */
-
+    
     Admin = () => {
         console.log("Admin Method -> ",facade.loggedIn())
         if (facade.loggedIn() === true) {
@@ -76,7 +61,9 @@ class App extends Component {
         }
 
 
-    }
+    
+    
+}
     render() {
         return (
             <div>
@@ -89,9 +76,9 @@ class App extends Component {
                             <li>
                                 <NavLink to="/about">About</NavLink>
                             </li>
-                            <li>
+                            {/* <li>
                                 <NavLink to="/topics">Topics</NavLink>
-                            </li>
+                            </li> */}
                             {facade.loggedIn() ? (
                                 <div>
                                     <li>
@@ -106,7 +93,7 @@ class App extends Component {
                                     </div>
                                 </div>
                             ) : (
-                                    <li className="float-right">
+                                <li className="float-right">
                                         <NavLink to="/login">
                                             <span className="glyphicon glyphicon-log-in"></span>  Admin Login
                                          </NavLink>
@@ -117,7 +104,7 @@ class App extends Component {
 
                         <Route exact path="/" component={Home} />
                         <Route path="/about" component={About} />
-                        <Route path="/topics" component={Topics} />
+                        {/* <Route path="/topics" component={Topics} /> */}
                         <Route path="/login" render={() => <LogIn login={this.adminLogin} />} />
                         {/* <Route path="m/admmin" component= {mAdmin}/> */}
                         {facade.loggedIn ? <Route path="/admin" component={this.Admin} /> : null}
@@ -153,37 +140,37 @@ function Home() {
 
 
 
-function Topics({ match }) {
-    const lis = topics.map(t => <li key={t.id}> <Link to={`${match.url}/${t.id}`}>{t.id}</Link> </li>);
-    return (
-        <div>
-            <h2>Topics</h2>
-            <ul>
-                {lis}
-            </ul>
+// function Topics({ match }) {
+//     const lis = topics.map(t => <li key={t.id}> <Link to={`${match.url}/${t.id}`}>{t.id}</Link> </li>);
+//     return (
+//         <div>
+//             <h2>Topics</h2>
+//             <ul>
+//                 {lis}
+//             </ul>
 
 
-            <Route path={`${match.path}/:topicId`}
-                render={(props) =>
-                    <Topic {...props} detail={topics.find(t => t.id === props.match.params.topicId)} />} />
+//             <Route path={`${match.path}/:topicId`}
+//                 render={(props) =>
+//                     <Topic {...props} detail={topics.find(t => t.id === props.match.params.topicId)} />} />
 
 
-            <Route
-                exact
-                path={match.path}
-                render={() => <h3>Please select a topic.</h3>}
-            />
-        </div>
-    );
-}
+//             <Route
+//                 exact
+//                 path={match.path}
+//                 render={() => <h3>Please select a topic.</h3>}
+//             />
+//         </div>
+//     );
+// }
 
-function Topic({ match, detail }) {
-    return (
-        <div>
-            <h3>{match.params.topicId}</h3>
-            <div>{detail.topic}</div>
-        </div>
-    );
-}
+// function Topic({ match, detail }) {
+//     return (
+//         <div>
+//             <h3>{match.params.topicId}</h3>
+//             <div>{detail.topic}</div>
+//         </div>
+//     );
+// }
 
 export default App;
