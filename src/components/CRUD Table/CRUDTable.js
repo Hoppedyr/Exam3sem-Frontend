@@ -55,11 +55,11 @@ class CRUDTable extends Component {
   }
 
   onAdd = async (restaurant) => {
+    console.log("entered")
+    restaurant.id = "0"
     await facade.addRestaurant(restaurant);
     this.save();
   }
-
-  
 
   save = async () => {
     const restaurants = await facade.getRestaurants();

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, NavLink, Redirect } from "react-router-dom";
 import LogIn from "./components/LogIn/LogIn";
+import windowSize from 'react-window-size'
 
 import CRUDTable from "./components/CRUD Table/CRUDTable";
 import facade from "./facades/Facade";
@@ -34,7 +35,6 @@ class App extends Component {
             console.log(error.fullError.errorMessage)
         }
     }
-
 
     totalLogOut = () => {
         facade.logout()
