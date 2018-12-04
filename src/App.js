@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, NavLink, Redirect } from "react-router-dom";
 import LogIn from "./components/LogIn/LogIn";
 import windowSize from 'react-window-size'
+import MyImageSvg from './styles/Logo.svg';
 
 import CRUDTable from "./components/CRUD Table/CRUDTable";
 import facade from "./facades/Facade";
@@ -67,12 +68,14 @@ class App extends Component {
             <div>
                 <Router>
                     <div>
-                        <ul className="topbar">
+                        <ul className="topbar" >
                             <li>
-                                LOGO
+                                <img style={{width:"50%",height:"100%"}} src={MyImageSvg}/>
+                                <h5>Scroll down</h5>
+                                <span className="glyphicon glyphicon-menu-down"></span>
                         </li>
                         </ul>
-                        <ul className="header">
+                        <ul className="header navbar-fixed-top">
                             <li>
                                 <NavLink exact to="/">Home</NavLink>
                             </li>
