@@ -14,7 +14,7 @@ export default class LogIn extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={{ margin: 20 }}>
         <h2>Login</h2>
         <form onSubmit={this.login} onChange={this.onChange} >
           <input placeholder="User Name" id="username" />

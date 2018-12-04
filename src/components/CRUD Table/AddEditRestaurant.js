@@ -94,7 +94,6 @@ export default class AddEditRestaurant extends Component {
 
 
   render() {
-    console.log(this.state.restaurant.id);
     return (
       <div>
         <form className="form-horizontal" onSubmit={this.handleSubmit}>
@@ -155,9 +154,10 @@ export default class AddEditRestaurant extends Component {
           <div className="form-group">
             <div className="col-sm-offset-3 col-sm-9">
               <button type="submit" className="btn btn-default">Submit</button>
+
               <button type="button" className="btn btn-default" onClick={this.resetForm}>Reset</button>
+              <hr></hr>
             </div>
-            {JSON.stringify(this.state)}
           </div>
         </form>
       </div>
