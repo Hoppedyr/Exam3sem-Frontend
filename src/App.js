@@ -69,7 +69,7 @@ class App extends Component {
                     <div>
                         <ul className="topbar" >
                             <li>
-                                <img style={{width:"50%",height:"100%"}} src={MyImageSvg}/>
+                                <img style={{width:"50%",height:windowSize.height-44.55}} src={MyImageSvg}/>
                                 <h5>Scroll down</h5>
                                 <span className="glyphicon glyphicon-menu-down"></span>
                         </li>
