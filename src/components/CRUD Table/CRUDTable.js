@@ -69,7 +69,7 @@ class CRUDTable extends Component {
     return (
       <div style={{ margin: 20 }}>
         <div className="row">
-          <div style={{ width: "30%", marginRight: 20 }}>
+          <div style={{ width: "20%", marginRight: 20 }}>
             <h3 style={{ backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Add / Edit Restaurants</h3>
             <AddEditRestaurant key={this.state.editRestaurant.id} onAdd={this.onAdd} onEdit={this.onEdit} onEditSubmit={this.onEditSubmit} verifyID={this.verifyID} restaurant={this.state.editRestaurant} />
           </div>
