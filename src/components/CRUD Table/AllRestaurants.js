@@ -9,8 +9,8 @@ export default function AllRestaurants(props) {
       <td style={{ maxWidth: 50, wordWrap: 'break-word' }}>{restaurant.restName}</td>
       <td style={{ maxWidth: 50, wordWrap: 'break-word' }}>{restaurant.phone}</td>
       <td>{restaurant.foodType}</td>
-      <td style={{ maxWidth: 50, wordWrap: 'break-word' }}>{restaurant.website}</td>
-      <td style={{ maxWidth: 50, wordWrap: 'break-word' }}>{restaurant.pictureUrl}</td>
+      <td style={{ maxWidth: 50, wordWrap: 'break-word' }}><a href={restaurant.website}>{restaurant.website}</a></td>
+      <td style={{ maxWidth: 50, wordWrap: 'break-word' }}><a href={restaurant.pictureUrl}>{restaurant.pictureUrl}</a></td>
       <td>{restaurant.street}</td>
       <td>{restaurant.cityInfo.city}</td>
       <td>{restaurant.cityInfo.zip}</td>
