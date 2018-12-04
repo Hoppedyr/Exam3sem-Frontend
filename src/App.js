@@ -134,9 +134,27 @@ function About() {
         <div style={{ margin: 20 }}>
             <h3 style={{fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>About</h3>
             <br />
-            <h2>Board of Directors</h2>
+            <h1 align="center">About Durumbo</h1>
+            <hr></hr>
+            <h4>Durumbo is the intermediary between restaurants and customers.<br></br>
+ We collect the restaurants near you, and make it easy to choose the most convenient restaurant for your pleasure.<br></br>
+ Here you can find your specific type of food, or in a specific place.<br></br> We share the menu card
+and contact information for the restaurants
+and after that the restaurant takes over.<br></br>
+Durombo’s headquarter is located in Lyngby, and for now only operates in the northern sealand, <br></br>
+but with the plans on expanding there service all over Denmark, and later all over the world.<br></br>
+<br></br>
+Durumbo started from a small asbest-filled basement, with 7 good friends who had a plan to start a business. <br></br>
+It was rough in the start, and health took a lower priority than the company.<br></br>
+Unfortunately we lost two people in the company, during the come-up, to the asbest.
+RIP.
+<br></br>
+<br></br>
+<hr></hr></h4>
+            <h2 align="center">Board of Directors</h2>
             <hr/>
             <h3>Chairman of the Board - Nikolaj Brandt Hemmeshøj : Denmark</h3>
+            
             <br/>
             <h5>Founder and idea-man behind Durumbo and it's great success</h5>
             <br/>
