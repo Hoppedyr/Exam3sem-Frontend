@@ -154,10 +154,9 @@ export default class AddEditRestaurant extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-offset-3 col-sm-9">
-              <button type="submit" className="btn btn-default">Submit</button>
-              <button type="button" className="btn btn-default" onClick={this.resetForm}>Reset</button>
+              <button type="submit" className="btn btn-primary btn-lg">Submit</button>
+              <button type="button" className="btn btn-primary btn-lg"style={{marginLeft:5}} onClick={this.resetForm}>Reset</button>
             </div>
-            {JSON.stringify(this.state)}
           </div>
         </form>
       </div>
