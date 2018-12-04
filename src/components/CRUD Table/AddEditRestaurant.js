@@ -7,19 +7,20 @@ export default class AddEditRestaurant extends Component {
   constructor(props) {
     super(props);
     this.editPerson = this.props.editPerson;
-    this.state = { 
-      restaurant:{
-      id: props.restaurant.id,
-      restName: props.restaurant.restName,
-      foodType: props.restaurant.foodType,
-      website: props.restaurant.website,
-      street: props.restaurant.street,
-      phone: props.restaurant.phone,
-      pictureUrl: props.restaurant.pictureUrl,
-      cityInfo: {
-        zip: props.restaurant.cityInfo.zip,
-        city: props.restaurant.cityInfo.city
-      }}
+    this.state = {
+      restaurant: {
+        id: props.restaurant.id,
+        restName: props.restaurant.restName,
+        foodType: props.restaurant.foodType,
+        website: props.restaurant.website,
+        street: props.restaurant.street,
+        phone: props.restaurant.phone,
+        pictureUrl: props.restaurant.pictureUrl,
+        cityInfo: {
+          zip: props.restaurant.cityInfo.zip,
+          city: props.restaurant.cityInfo.city
+        }
+      }
     };
   }
 
@@ -28,7 +29,7 @@ export default class AddEditRestaurant extends Component {
 
   handleSubmit = async (evt) => {
     evt.preventDefault();
- 
+
     if (this.state.restaurant.id !== "") {
       this.props.onEditSubmit(this.state.restaurant);
     } else {
@@ -38,7 +39,7 @@ export default class AddEditRestaurant extends Component {
 
   resetForm = () => {
     this.setState({
-      restaurant : { 
+      restaurant: {
         id: "",
         restName: "",
         foodType: "",
@@ -49,47 +50,48 @@ export default class AddEditRestaurant extends Component {
         cityInfo: {
           zip: "",
           city: ""
-        }}});
+        }
+      }
+    });
   }
 
   handleInputChange = (event) => {
     let title = event.target.name;
     let restaurant = Object.assign({}, this.state.restaurant);
-    switch(title)
-    {
+    switch (title) {
       case 'zip':
-      restaurant.cityInfo.zip = event.target.value;                 
-      this.setState({restaurant})
-      break;
-       case 'city':
-       restaurant.cityInfo.city = event.target.value;                 
-       this.setState({restaurant})
-      break;
+        restaurant.cityInfo.zip = event.target.value;
+        this.setState({ restaurant })
+        break;
+      case 'city':
+        restaurant.cityInfo.city = event.target.value;
+        this.setState({ restaurant })
+        break;
       case 'restName':
-      restaurant.restName = event.target.value;                 
-      this.setState({restaurant})
-      break;
+        restaurant.restName = event.target.value;
+        this.setState({ restaurant })
+        break;
       case 'foodType':
-      restaurant.foodType = event.target.value;                 
-      this.setState({restaurant})
-      break;
+        restaurant.foodType = event.target.value;
+        this.setState({ restaurant })
+        break;
       case 'phone':
-      restaurant.phone = event.target.value;                 
-      this.setState({restaurant})
-      break;
+        restaurant.phone = event.target.value;
+        this.setState({ restaurant })
+        break;
       case 'pictureUrl':
-      restaurant.pictureUrl = event.target.value;                 
-      this.setState({restaurant})
-      break;
+        restaurant.pictureUrl = event.target.value;
+        this.setState({ restaurant })
+        break;
       case 'website':
-      restaurant.website = event.target.value;                 
-      this.setState({restaurant})
-      break;
+        restaurant.website = event.target.value;
+        this.setState({ restaurant })
+        break;
       case 'street':
-      restaurant.street = event.target.value;                 
-      this.setState({restaurant})
-      break;
-    } 
+        restaurant.street = event.target.value;
+        this.setState({ restaurant })
+        break;
+    }
   }
 
 
@@ -153,9 +155,9 @@ export default class AddEditRestaurant extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-offset-3 col-sm-9">
-              <button type="submit" className="btn btn-default">Submit</button>
 
-              <button type="button" className="btn btn-default" onClick={this.resetForm}>Reset</button>
+              <button type="submit" className="btn btn-primary btn-lg">Submit</button>
+              <button type="button" className="btn btn-primary btn-lg" style={{ marginLeft: 5 }} onClick={this.resetForm}>Reset</button>
               <hr></hr>
             </div>
           </div>
