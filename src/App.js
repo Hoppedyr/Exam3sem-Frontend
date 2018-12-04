@@ -51,7 +51,7 @@ class App extends Component {
         } else {
             return (
                 <div style={{ margin: 20 }}>
-                    <h3 style={{ borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Admin Page</h3>
+                    <h3 style={{fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Admin Page</h3>
                     <h4 style={{textAlign: "center"}}>ACCESS DENIED: NOT LOGGED IN</h4>
                 </div>
             );
@@ -132,7 +132,7 @@ class App extends Component {
 function About() {
     return (
         <div style={{ margin: 20 }}>
-            <h3 style={{ borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>About</h3>
+            <h3 style={{fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>About</h3>
             <br />
             <h2>Board of Directors</h2>
             <hr/>
@@ -163,7 +163,8 @@ function About() {
 
 function Home() {
     return (
-        <div>
+        <div style={{margin: 20}} >
+            <h3 style={{ fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Restaurants</h3>
             <RestaurantsPag />
         </div>
     );

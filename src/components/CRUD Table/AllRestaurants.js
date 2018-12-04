@@ -14,8 +14,8 @@ export default function AllRestaurants(props) {
       <td>{restaurant.street}</td>
       <td>{restaurant.cityInfo.city}</td>
       <td>{restaurant.cityInfo.zip}</td>
-      <td><button href="/#" onClick={() => onEdit(restaurant)} id={restaurant.id} value={restaurant}>Edit</button></td>
-      <td><button href="/#" onClick={onDelete} id={restaurant.id}>Delete</button></td>
+      <td><button href="/#" className="btn btn-primary btn-lg" onClick={() => onEdit(restaurant)} id={restaurant.id} value={restaurant}>Edit</button></td>
+      <td><button href="/#" className="btn btn-primary btn-lg" onClick={onDelete} id={restaurant.id}>Delete</button></td>
     </tr>);
   return (
     <div>
