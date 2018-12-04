@@ -175,31 +175,32 @@ function About() {
                 RIP.
                 <br></br>
                 <br></br>
+                <br></br>
                 <hr></hr></h4>
-            <h2 align="center">Board of Directors</h2>
+            <h2 align="center">Durumbo Team</h2>
             <hr />
-            <h3 style={{ fontWeight: "bold" }}>Chairman of the Board - Nikolaj Brandt Hemmeshøj : Denmark</h3>
-            <h5>Founder and idea-man behind Durumbo and it's great success</h5>
+            <h4 style={{ fontWeight: "bold", fontSize: 25 }}>Product Owner - Palle Bech: Denmark </h4>
+            <h5>Product Owner of the Durumbo Team, </h5>
             <br />
 
-            <h4 style={{ fontWeight: "bold" }}>Durumbo Chief Executive Officer - Iulia Zaharia : Moldova</h4>
-            <h5>Created the innovative logo and manages the company</h5>
+            <h4 style={{ fontWeight: "bold" }}>Fullstack Developer, Scrum Master (S1) - Rasmus Jarnborg Friis : Denmark</h4>
+            <h5>Something about me</h5>
             <br />
 
-            <h4 style={{ fontWeight: "bold" }}>Durumbo Chief Technical Officer - Mohammad Hariri : Sweden</h4>
-            <h5>Our immigrant that the government forced us to employ</h5>
+            <h4 style={{ fontWeight: "bold" }}>Fullstack Developer, Scrum Master (S2) - André Borchersen : Denmark</h4>
+            <h5>Something about me</h5>
             <br />
 
-            <h4 style={{ fontWeight: "bold" }}>Durumbo Manager of Fredagsbar - Rasmus Jarnborg Friis : Denmark</h4>
-            <h5>Some random drunk guy that smokes oregano in his office</h5>
+            <h4 style={{ fontWeight: "bold" }}>Fullstack Developer, Scrum Master (S3) - Mohammad Hariri : Denmark</h4>
+            <h5>Something about me</h5>
             <br />
 
-            <h4 style={{ fontWeight: "bold" }}>Durumbo Chief Financial Officer - Andreas Guldborg Heick : Denmark</h4>
-            <h5>Sends taxpayer money through Danske Bank Estonia to make Durumbo great again</h5>
+            <h4 style={{ fontWeight: "bold" }}>Fullstack Developer, Secretary - Andreas Guldborg Heick : Denmark</h4>
+            <h5>Something about me</h5>
             <br />
 
-            <h4 style={{ fontWeight: "bold" }}>Durumbo Danske Bank Estonia Contact Person - André Borchersen : Denmark</h4>
-            <h5>Runs the Durumbo laundromat in Estonia, that is why he is always late</h5>
+            <h4 style={{ fontWeight: "bold" }}>Logo Designer - Iulia Zaharia : Moldova</h4>
+            <h5>Created the Durumbo Logo</h5>
             <hr />
 
         </div>
