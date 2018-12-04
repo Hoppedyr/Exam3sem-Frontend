@@ -69,15 +69,13 @@ class CRUDTable extends Component {
     return (
       <div style={{ margin: 20 }}>
         <div className="row">
-          <div className="col-md-7">
-          <h3 style={{backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Restaurant Manager</h3>
-            <AllRestaurants restaurants={this.state.restaurants} onEdit={this.onEdit} onDelete={this.onDelete} />
-          </div>
-          <div className="col-md-1">
-          </div>
-          <div className="col-md-4" >
-          <h3 style={{backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Add / Edit Restaurants</h3>
+          <div style={{ width: "30%", marginRight: 20 }}>
+            <h3 style={{ backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Add / Edit Restaurants</h3>
             <AddEditRestaurant key={this.state.editRestaurant.id} onAdd={this.onAdd} onEdit={this.onEdit} onEditSubmit={this.onEditSubmit} verifyID={this.verifyID} restaurant={this.state.editRestaurant} />
+          </div>
+          <div>
+            <h3 style={{ backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Restaurant Manager</h3>
+            <AllRestaurants restaurants={this.state.restaurants} onEdit={this.onEdit} onDelete={this.onDelete} />
           </div>
         </div>
 
