@@ -33,14 +33,12 @@ export default class RestaurantTable extends Component {
 
 
     render() {
-        const CaptionElement = () => <h3 style={{ borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Restaurants</h3>;
         if (this.state.data !== null) {
             let page = 1;
             let sizePerPage = 10;
             // let totalSize = this.state.data.length;
             return (
-                <div style={{ margin: 20, width: "100%" }}>
-                    {<CaptionElement />}
+                <div style={{ width: "100%" }}>
                     <div style={{ textAlign: "center" }}>
                         <button className="btn btn-primary btn-lg" onClick={handleClick}> Clear all filters </button>
                         <br />
@@ -62,7 +60,7 @@ export default class RestaurantTable extends Component {
             );
         }
         else {
-            return <div><h1>Loading...</h1></div>
+            return <div><h1 style={{textAlign: "center"}}>Loading...</h1></div>
         }
     }
 }

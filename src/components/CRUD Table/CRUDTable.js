@@ -8,8 +8,8 @@ class CRUDTable extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { 
-      restaurants: [],           
+    this.state = {
+      restaurants: [],
       editRestaurant:
       {
         id: "",
@@ -31,15 +31,14 @@ class CRUDTable extends Component {
     try {
       const restaurants = await facade.getRestaurants();
       this.setState({ restaurants });
-      console.log("Restaurants -> ",this.state.restaurants);
     } catch (err) {
-      alert("REMOVE ME " + err);
+      alert("Error: " + err);
     }
   }
 
   onEdit = (restaurant) => {
-    const {id, restName, foodType, website, street, phone, pictureUrl, cityInfo} = restaurant;
-    this.setState({editRestaurant:{restName, foodType ,id , website, street, phone, pictureUrl, cityInfo}});
+    const { id, restName, foodType, website, street, phone, pictureUrl, cityInfo } = restaurant;
+    this.setState({ editRestaurant: { restName, foodType, id, website, street, phone, pictureUrl, cityInfo } });
   }
 
   onEditSubmit = async (restaurant) => {
@@ -55,7 +54,6 @@ class CRUDTable extends Component {
   }
 
   onAdd = async (restaurant) => {
-    console.log("entered")
     restaurant.id = "0"
     await facade.addRestaurant(restaurant);
     this.save();
@@ -63,23 +61,21 @@ class CRUDTable extends Component {
 
   save = async () => {
     const restaurants = await facade.getRestaurants();
-    this.setState({ restaurants:restaurants});
+    this.setState({ restaurants: restaurants });
   }
 
 
   render() {
     return (
-      <div style={{ margin: 20, width: "100%" }}>
+      <div style={{ margin: 20 }}>
         <div className="row">
-          <div className="col-md-6">
-            <h3>All Restaurants</h3>
+          <div className="col-md-8">
+            <h3 style={{ borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Restaurant Manager</h3>
             <AllRestaurants restaurants={this.state.restaurants} onEdit={this.onEdit} onDelete={this.onDelete} />
           </div>
-          <div className="col-md-2">
-          </div>
-          <div className="col-md-5" >
+          <div className="col-md-4" >
             <h3 style={{ textAlign: "center" }}>Add / Edit Restaurants</h3>
-            <AddEditRestaurant key={this.state.editRestaurant.id} onAdd={this.onAdd} onEdit={this.onEdit} onEditSubmit={this.onEditSubmit} verifyID={this.verifyID} restaurant={this.state.editRestaurant}/>
+            <AddEditRestaurant key={this.state.editRestaurant.id} onAdd={this.onAdd} onEdit={this.onEdit} onEditSubmit={this.onEditSubmit} verifyID={this.verifyID} restaurant={this.state.editRestaurant} />
           </div>
         </div>
 

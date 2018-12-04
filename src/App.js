@@ -43,7 +43,6 @@ class App extends Component {
     }
 
     Admin = () => {
-        console.log("Admin Method -> ", facade.loggedIn())
         if (facade.loggedIn() === true) {
             return (
                 <div>
@@ -52,9 +51,9 @@ class App extends Component {
             );
         } else {
             return (
-                <div>
-                    <h2>Admin Page</h2>
-                    <p>Not logged in </p>
+                <div style={{ margin: 20 }}>
+                    <h3 style={{fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Admin Page</h3>
+                    <h4 style={{textAlign: "center"}}>ACCESS DENIED: NOT LOGGED IN</h4>
                 </div>
             );
         }
@@ -91,14 +90,14 @@ class App extends Component {
                                         <NavLink to="/admin">Admin Panel</NavLink>
                                     </li>
 
-                                    <li className="navbartext">
-                                        <p>Logged in: {facade.username}</p>
-                                    </li>
-
                                     <li className="float-right">
                                         <NavLink to="/" onClick={this.totalLogOut}>
                                             <span className="glyphicon glyphicon-log-out"></span> Admin Logout
                                         </NavLink>
+                                    </li>
+                                    
+                                    <li className="float-right navbartext">
+                                        <p>Logged in as: {facade.username}</p>
                                     </li>
                                 </div>
                             ) : (
@@ -135,10 +134,31 @@ class App extends Component {
 
 function About() {
     return (
-        <div>
-            <h2>About</h2>
+        <div style={{ margin: 20 }}>
+            <h3 style={{fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>About</h3>
             <br />
-            <h4>Quick Start Project for group #IkkeForLangt</h4>
+            <h2>Board of Directors</h2>
+            <hr/>
+            <h3>Chairman of the Board - Nikolaj Brandt Hemmeshøj : Denmark</h3>
+            <br/>
+            <h5>Founder and idea-man behind Durumbo and it's great success</h5>
+            <br/>
+            <hr/>
+            <h4>Durumbo Chief Executive Officer - Iulia Zaharia : Moldova</h4>
+            <h5>Created the innovative logo and manages the company</h5>
+            <hr/>
+            <h4>Durumbo Chief Technical Officer - Mohammad Hariri : Sweden</h4>
+            <h5>Our immigrant that the government forced us to employ</h5>
+            <hr/>
+            <h4>Durumbo Manager of Fredagsbar - Rasmus Jarnborg Friis : Denmark</h4>
+            <h5>Some random drunk guy that smokes oregano in his office</h5>
+            <hr/>
+            <h4>Durumbo Chief Financial Officer - Andreas Guldborg Heick : Denmark</h4>
+            <h5>Sends taxpayer money through Danske Bank Estonia to make Durumbo great again</h5>
+            <hr/>
+            <h4>Durumbo Danske Bank Estonia Contact Person - André Borchersen : Denmark</h4>
+            <h5>Runs the Durumbo laundromat in Estonia, that is why he is always late</h5>
+            <hr/>
 
         </div>
     );
@@ -146,8 +166,8 @@ function About() {
 
 function Home() {
     return (
-        <div>
-            <h2>Home</h2>
+        <div style={{margin: 20}} >
+            <h3 style={{ fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Restaurants</h3>
             <RestaurantsPag />
         </div>
     );
