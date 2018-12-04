@@ -159,13 +159,13 @@ function About() {
                 Durumbo started from a small asbest-filled basement, with 7 good friends who had a plan to start a business. <br></br>
                 It was rough in the start, and health took a lower priority than the company.<br></br>
                 Unfortunately the company lost two people during this time, both due to asbest poisoning.
-                <br/><br/>
+                <br/>In their memory the name of the company was created, combining their two names<br/><br/>
                 RIP Dur & Umbo
                 <br/><br/><br/><br/>
                 <hr></hr></h4>
-            <h2 align="center">Durumbo Team</h2>
+            <h1 align="center">Durumbo Team</h1>
             <hr />
-            <h4 style={{ fontWeight: "bold", fontSize: 20 }}>Product Owner - Palle Bech</h4>
+            <h4 style={{ fontWeight: "bold" }}>Product Owner - Palle Bech</h4>
             <h5>Product Owner of the Durumbo</h5>
             <img src={Pab} class="img-responsive img-circle margin" style={{display: "inline"}} alt="Andreas" width="10%"/>
             <br/><br/><br/><br/>

@@ -48,9 +48,10 @@ class CRUDTable extends Component {
 
   onDelete = async (event) => {
     event.preventDefault();
-    const id = event.target.id;
-    await facade.deleteRestaurant(id);
-    this.save();
+    alert("Not implemented!");
+    // const id = event.target.id;
+    // await facade.deleteRestaurant(id);
+    // this.save();
   }
 
   onAdd = async (restaurant) => {
