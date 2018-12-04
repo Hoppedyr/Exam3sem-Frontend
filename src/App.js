@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, NavLink, Redirect } from "react-router-dom";
 import LogIn from "./components/LogIn/LogIn";
-import windowSize from 'react-window-size'
 import MyImageSvg from './styles/Logo.svg';
+import Andreas from './styles/images/andreas.jpg';
+import Mohammad from './styles/images/mohammad.jpg';
+import Rasmus from './styles/images/rasmus.jpg';
+import André from './styles/images/andré.jpg';
+import Pab from './styles/images/pab.jpg';
+
 
 import CRUDTable from "./components/CRUD Table/CRUDTable";
 import facade from "./facades/Facade";
@@ -56,25 +61,7 @@ class App extends Component {
                     <h4>ACCESS DENIED: NOT LOGGED IN</h4>
                     <br />
                     <span style={{ fontSize: 50 }} className="glyphicon glyphicon-eye-close"></span>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 </div>
             );
         }
@@ -161,46 +148,48 @@ function About() {
             <h1 align="center">About Durumbo</h1>
             <hr></hr>
             <h4>Durumbo is the intermediary between restaurants and customers.<br></br>
-                We collect the restaurants near you, and make it easy to choose the most convenient restaurant for your pleasure.<br></br>
-                Here you can find your specific type of food, or in a specific place.<br></br> We share the menu card
+                We collect the restaurants near you, and make it easy for you the customer to choose the most convenient restaurant for your pleasure.<br></br>
+                Here you can find your specific type of food, or a specific place.<br></br> We share the menu card
                 and contact information for the restaurants
-                and after that the restaurant takes over.<br></br>
-                Durombo’s headquarter is located in Lyngby, and for now only operates in the northern sealand, <br></br>
-                but with the plans on expanding there service all over Denmark, and later all over the world.<br></br>
-                <br></br>
+                and after that the restaurant takes over.
+                <br/><br/>
+                Durombo’s headquarter is located in Kongens Lyngby, and for now only operates in North Zealand (Nordsjælland), <br></br>
+                but the company is currently planning on expanding their services to all of Denmark, and later all over the world.<br></br>
+                <br/>
                 Durumbo started from a small asbest-filled basement, with 7 good friends who had a plan to start a business. <br></br>
                 It was rough in the start, and health took a lower priority than the company.<br></br>
-                Unfortunately we lost two people in the company, during the come-up, to the asbest.
-                RIP.
-                <br></br>
-                <br></br>
-                <br></br>
+                Unfortunately the company lost two people during this time, both due to asbest poisoning.
+                <br/><br/>
+                RIP Dur & Umbo
+                <br/><br/><br/><br/>
                 <hr></hr></h4>
             <h2 align="center">Durumbo Team</h2>
             <hr />
-            <h4 style={{ fontWeight: "bold", fontSize: 25 }}>Product Owner - Palle Bech: Denmark </h4>
-            <h5>Product Owner of the Durumbo Team, </h5>
-            <br />
+            <h4 style={{ fontWeight: "bold", fontSize: 20 }}>Product Owner - Palle Bech</h4>
+            <h5>Product Owner of the Durumbo</h5>
+            <img src={Pab} class="img-responsive img-circle margin" style={{display: "inline"}} alt="Andreas" width="10%"/>
+            <br/><br/><br/><br/>
 
-            <h4 style={{ fontWeight: "bold" }}>Fullstack Developer, Scrum Master (S1) - Rasmus Jarnborg Friis : Denmark</h4>
-            <h5>Something about me</h5>
-            <br />
+            <h4 style={{ fontWeight: "bold" }}>Full Stack Developer, Scrum Master (S1) - Rasmus Jarnborg Friis</h4>
+            <h5>Co-Founder of Durumbo</h5>
+            <img src={Rasmus} class="img-responsive img-circle margin" style={{display: "inline"}} alt="Andreas" width="10%"/>
+            <br/><br/><br/><br/>
 
-            <h4 style={{ fontWeight: "bold" }}>Fullstack Developer, Scrum Master (S2) - André Borchersen : Denmark</h4>
-            <h5>Something about me</h5>
-            <br />
+            <h4 style={{ fontWeight: "bold" }}>Full Stack Developer, Scrum Master (S2) - André Borchersen</h4>
+            <h5>Co-Founder of Durumbo</h5>
+            <img src={André} class="img-responsive img-circle margin" style={{display: "inline"}} alt="Andreas" width="10%"/>
+            <br/><br/><br/><br/>
 
-            <h4 style={{ fontWeight: "bold" }}>Fullstack Developer, Scrum Master (S3) - Mohammad Hariri : Denmark</h4>
-            <h5>Something about me</h5>
-            <br />
+            <h4 style={{ fontWeight: "bold" }}>Full Stack Developer, Scrum Master (S3) - Mohammad Hariri</h4>
+            <h5>Co-Founder of Durumbo</h5>
+            <img src={Mohammad} class="img-responsive img-circle margin" style={{display: "inline"}} alt="Andreas" width="10%"/>
+            <br/><br/><br/><br/>
 
-            <h4 style={{ fontWeight: "bold" }}>Fullstack Developer, Secretary - Andreas Guldborg Heick : Denmark</h4>
-            <h5>Something about me</h5>
-            <br />
 
-            <h4 style={{ fontWeight: "bold" }}>Logo Designer - Iulia Zaharia : Moldova</h4>
-            <h5>Created the Durumbo Logo</h5>
-            <hr />
+            <h4 style={{ fontWeight: "bold" }}>Full Stack Developer, Secretary - Andreas Guldborg Heick</h4>
+            <h5>Co-Founder of Durumbo</h5>
+            <img src={Andreas} class="img-responsive img-circle margin" style={{display: "inline"}} alt="Andreas" width="10%"/>
+            <br/><br/><br/><br/>
 
         </div>
     );
