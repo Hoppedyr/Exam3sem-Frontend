@@ -52,29 +52,29 @@ class App extends Component {
         } else {
             return (
                 <div style={{ margin: 20, textAlign: "center" }}>
-                    <h3 style={{backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Admin Page</h3>
+                    <h3 style={{ backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Admin Page</h3>
                     <h4>ACCESS DENIED: NOT LOGGED IN</h4>
-                    <br/>
-                    <span style={{fontSize: 50}}className="glyphicon glyphicon-eye-close"></span>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <br />
+                    <span style={{ fontSize: 50 }} className="glyphicon glyphicon-eye-close"></span>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
             );
         }
@@ -90,11 +90,11 @@ class App extends Component {
                     <div>
                         <ul className="topbar" >
                             <li>
-                                <img style={{width:"50%",height:"100%"}} src={MyImageSvg}/>
+                                <img style={{ width: "45%" }} src={MyImageSvg} />
 
                                 <h5>Scroll down</h5>
                                 <span className="glyphicon glyphicon-menu-down"></span>
-                        </li>
+                            </li>
                         </ul>
                         <ul className="header navbar-fixed-top">
                             <li>
@@ -120,7 +120,7 @@ class App extends Component {
 
                                     <li className="float-right navbartext">
                                         <p><span className="glyphicon glyphicon-user"></span> User: {facade.username}</p>
-                                        
+
                                     </li>
                                 </div>
                             ) : (
@@ -156,47 +156,49 @@ class App extends Component {
 
 function About() {
     return (
-        <div style={{ margin: 20, textAlign: "center"}} >
-            <h3 style={{backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>About</h3>
+        <div style={{ margin: 20, textAlign: "center" }} >
+            <h3 style={{ backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>About</h3>
             <br />
             <h1 align="center">About Durumbo</h1>
             <hr></hr>
             <h4>Durumbo is the intermediary between restaurants and customers.<br></br>
- We collect the restaurants near you, and make it easy to choose the most convenient restaurant for your pleasure.<br></br>
- Here you can find your specific type of food, or in a specific place.<br></br> We share the menu card
-and contact information for the restaurants
-and after that the restaurant takes over.<br></br>
-Durombo’s headquarter is located in Lyngby, and for now only operates in the northern sealand, <br></br>
-but with the plans on expanding there service all over Denmark, and later all over the world.<br></br>
-<br></br>
-Durumbo started from a small asbest-filled basement, with 7 good friends who had a plan to start a business. <br></br>
-It was rough in the start, and health took a lower priority than the company.<br></br>
-Unfortunately we lost two people in the company, during the come-up, to the asbest.
-RIP.
-<br></br>
-<br></br>
-<hr></hr></h4>
+                We collect the restaurants near you, and make it easy to choose the most convenient restaurant for your pleasure.<br></br>
+                Here you can find your specific type of food, or in a specific place.<br></br> We share the menu card
+                and contact information for the restaurants
+                and after that the restaurant takes over.<br></br>
+                Durombo’s headquarter is located in Lyngby, and for now only operates in the northern sealand, <br></br>
+                but with the plans on expanding there service all over Denmark, and later all over the world.<br></br>
+                <br></br>
+                Durumbo started from a small asbest-filled basement, with 7 good friends who had a plan to start a business. <br></br>
+                It was rough in the start, and health took a lower priority than the company.<br></br>
+                Unfortunately we lost two people in the company, during the come-up, to the asbest.
+                RIP.
+                <br></br>
+                <br></br>
+                <hr></hr></h4>
             <h2 align="center">Board of Directors</h2>
-            <hr/>
-            <h3>Chairman of the Board - Nikolaj Brandt Hemmeshøj : Denmark</h3>
-            
-            <br/>
-
+            <hr />
+            <h3 style={{ fontWeight: "bold" }}>Chairman of the Board - Nikolaj Brandt Hemmeshøj : Denmark</h3>
             <h5>Founder and idea-man behind Durumbo and it's great success</h5>
-            <hr />
-            <h4>Durumbo Chief Executive Officer - Iulia Zaharia : Moldova</h4>
+            <br />
+
+            <h4 style={{ fontWeight: "bold" }}>Durumbo Chief Executive Officer - Iulia Zaharia : Moldova</h4>
             <h5>Created the innovative logo and manages the company</h5>
-            <hr />
-            <h4>Durumbo Chief Technical Officer - Mohammad Hariri : Sweden</h4>
+            <br />
+
+            <h4 style={{ fontWeight: "bold" }}>Durumbo Chief Technical Officer - Mohammad Hariri : Sweden</h4>
             <h5>Our immigrant that the government forced us to employ</h5>
-            <hr />
-            <h4>Durumbo Manager of Fredagsbar - Rasmus Jarnborg Friis : Denmark</h4>
+            <br />
+
+            <h4 style={{ fontWeight: "bold" }}>Durumbo Manager of Fredagsbar - Rasmus Jarnborg Friis : Denmark</h4>
             <h5>Some random drunk guy that smokes oregano in his office</h5>
-            <hr />
-            <h4>Durumbo Chief Financial Officer - Andreas Guldborg Heick : Denmark</h4>
+            <br />
+
+            <h4 style={{ fontWeight: "bold" }}>Durumbo Chief Financial Officer - Andreas Guldborg Heick : Denmark</h4>
             <h5>Sends taxpayer money through Danske Bank Estonia to make Durumbo great again</h5>
-            <hr />
-            <h4>Durumbo Danske Bank Estonia Contact Person - André Borchersen : Denmark</h4>
+            <br />
+
+            <h4 style={{ fontWeight: "bold" }}>Durumbo Danske Bank Estonia Contact Person - André Borchersen : Denmark</h4>
             <h5>Runs the Durumbo laundromat in Estonia, that is why he is always late</h5>
             <hr />
 
@@ -207,7 +209,7 @@ RIP.
 function Home() {
     return (
         <div style={{ margin: 20 }} >
-            <h3 style={{backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Restaurants</h3>
+            <h3 style={{ backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Restaurants</h3>
             <RestaurantsPag />
         </div>
     );
