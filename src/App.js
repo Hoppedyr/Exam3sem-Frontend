@@ -51,9 +51,30 @@ class App extends Component {
             );
         } else {
             return (
-                <div style={{ margin: 20 }}>
-                    <h3 style={{backgroundColor: "#BAFBFF", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Admin Page</h3>
-                    <h4 style={{ textAlign: "center" }}>ACCESS DENIED: NOT LOGGED IN</h4>
+                <div style={{ margin: 20, textAlign: "center" }}>
+                    <h3 style={{backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Admin Page</h3>
+                    <h4>ACCESS DENIED: NOT LOGGED IN</h4>
+                    <br/>
+                    <span style={{fontSize: 50}}className="glyphicon glyphicon-eye-close"></span>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                 </div>
             );
         }
@@ -77,10 +98,10 @@ class App extends Component {
                         </ul>
                         <ul className="header navbar-fixed-top">
                             <li>
-                                <NavLink exact to="/">Home</NavLink>
+                                <NavLink exact to="/"><span className="glyphicon glyphicon-home"></span> Home</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/about">About</NavLink>
+                                <NavLink to="/about"><span className="glyphicon glyphicon-info-sign"></span> About</NavLink>
                             </li>
                             {/* <li>
                                 <NavLink to="/topics">Topics</NavLink>
@@ -88,7 +109,7 @@ class App extends Component {
                             {facade.loggedIn() ? (
                                 <div>
                                     <li>
-                                        <NavLink to="/admin">Admin Panel</NavLink>
+                                        <NavLink to="/admin"><span className="glyphicon glyphicon-cog"></span> Admin Panel</NavLink>
                                     </li>
 
                                     <li className="float-right">
@@ -98,7 +119,8 @@ class App extends Component {
                                     </li>
 
                                     <li className="float-right navbartext">
-                                        <p>Logged in as: {facade.username}</p>
+                                        <p><span className="glyphicon glyphicon-user"></span> User: {facade.username}</p>
+                                        
                                     </li>
                                 </div>
                             ) : (
@@ -134,7 +156,7 @@ class App extends Component {
 
 function About() {
     return (
-        <div style={{ margin: 20 }}>
+        <div style={{ margin: 20, textAlign: "center"}} >
             <h3 style={{backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>About</h3>
             <br />
             <h2>Board of Directors</h2>
@@ -142,7 +164,6 @@ function About() {
             <h3>Chairman of the Board - Nikolaj Brandt Hemmeshøj : Denmark</h3>
             <br />
             <h5>Founder and idea-man behind Durumbo and it's great success</h5>
-            <br />
             <hr />
             <h4>Durumbo Chief Executive Officer - Iulia Zaharia : Moldova</h4>
             <h5>Created the innovative logo and manages the company</h5>
@@ -167,7 +188,7 @@ function About() {
 function Home() {
     return (
         <div style={{ margin: 20 }} >
-            <h3 style={{ fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Restaurants</h3>
+            <h3 style={{backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Restaurants</h3>
             <RestaurantsPag />
         </div>
     );
