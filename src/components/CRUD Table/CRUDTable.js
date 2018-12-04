@@ -70,11 +70,11 @@ class CRUDTable extends Component {
       <div style={{ margin: 20 }}>
         <div className="row">
           <div className="col-md-8">
-            <h3 style={{ borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Restaurant Manager</h3>
+          <h3 style={{backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Restaurant Manager</h3>
             <AllRestaurants restaurants={this.state.restaurants} onEdit={this.onEdit} onDelete={this.onDelete} />
           </div>
           <div className="col-md-4" >
-            <h3 style={{ textAlign: "center" }}>Add / Edit Restaurants</h3>
+          <h3 style={{backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Add / Edit Restaurants</h3>
             <AddEditRestaurant key={this.state.editRestaurant.id} onAdd={this.onAdd} onEdit={this.onEdit} onEditSubmit={this.onEditSubmit} verifyID={this.verifyID} restaurant={this.state.editRestaurant} />
           </div>
         </div>

@@ -51,9 +51,30 @@ class App extends Component {
             );
         } else {
             return (
-                <div style={{ margin: 20 }}>
-                    <h3 style={{fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Admin Page</h3>
-                    <h4 style={{textAlign: "center"}}>ACCESS DENIED: NOT LOGGED IN</h4>
+                <div style={{ margin: 20, textAlign: "center" }}>
+                    <h3 style={{ backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Admin Page</h3>
+                    <h4>ACCESS DENIED: NOT LOGGED IN</h4>
+                    <br />
+                    <span style={{ fontSize: 50 }} className="glyphicon glyphicon-eye-close"></span>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
             );
         }
@@ -72,14 +93,14 @@ class App extends Component {
                                 <img src={MyImageSvg}/>
                                 <h5>Scroll down</h5>
                                 <span className="glyphicon glyphicon-menu-down"></span>
-                        </li>
+                            </li>
                         </ul>
                         <ul className="header navbar-fixed-top">
                             <li>
-                                <NavLink exact to="/">Home</NavLink>
+                                <NavLink exact to="/"><span className="glyphicon glyphicon-home"></span> Home</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/about">About</NavLink>
+                                <NavLink to="/about"><span className="glyphicon glyphicon-info-sign"></span> About</NavLink>
                             </li>
                             {/* <li>
                                 <NavLink to="/topics">Topics</NavLink>
@@ -87,7 +108,7 @@ class App extends Component {
                             {facade.loggedIn() ? (
                                 <div>
                                     <li>
-                                        <NavLink to="/admin">Admin Panel</NavLink>
+                                        <NavLink to="/admin"><span className="glyphicon glyphicon-cog"></span> Admin Panel</NavLink>
                                     </li>
 
                                     <li className="float-right">
@@ -95,9 +116,10 @@ class App extends Component {
                                             <span className="glyphicon glyphicon-log-out"></span> Admin Logout
                                         </NavLink>
                                     </li>
-                                    
+
                                     <li className="float-right navbartext">
-                                        <p>Logged in as: {facade.username}</p>
+                                        <p><span className="glyphicon glyphicon-user"></span> User: {facade.username}</p>
+
                                     </li>
                                 </div>
                             ) : (
@@ -108,7 +130,6 @@ class App extends Component {
                                     </li>
                                 )}
                         </ul>
-                        <hr />
                         <Route exact path="/" component={Home} />
                         <Route path="/about" component={About} />
                         {/* <Route path="/topics" component={Topics} /> */}
@@ -134,31 +155,51 @@ class App extends Component {
 
 function About() {
     return (
-        <div style={{ margin: 20 }}>
-            <h3 style={{fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>About</h3>
+        <div style={{ margin: 20, textAlign: "center" }} >
+            <h3 style={{ backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>About</h3>
             <br />
-            <h2>Board of Directors</h2>
-            <hr/>
-            <h3>Chairman of the Board - Nikolaj Brandt Hemmeshøj : Denmark</h3>
-            <br/>
+            <h1 align="center">About Durumbo</h1>
+            <hr></hr>
+            <h4>Durumbo is the intermediary between restaurants and customers.<br></br>
+                We collect the restaurants near you, and make it easy to choose the most convenient restaurant for your pleasure.<br></br>
+                Here you can find your specific type of food, or in a specific place.<br></br> We share the menu card
+                and contact information for the restaurants
+                and after that the restaurant takes over.<br></br>
+                Durombo’s headquarter is located in Lyngby, and for now only operates in the northern sealand, <br></br>
+                but with the plans on expanding there service all over Denmark, and later all over the world.<br></br>
+                <br></br>
+                Durumbo started from a small asbest-filled basement, with 7 good friends who had a plan to start a business. <br></br>
+                It was rough in the start, and health took a lower priority than the company.<br></br>
+                Unfortunately we lost two people in the company, during the come-up, to the asbest.
+                RIP.
+                <br></br>
+                <br></br>
+                <hr></hr></h4>
+            <h2 align="center">Board of Directors</h2>
+            <hr />
+            <h3 style={{ fontWeight: "bold" }}>Chairman of the Board - Nikolaj Brandt Hemmeshøj : Denmark</h3>
             <h5>Founder and idea-man behind Durumbo and it's great success</h5>
-            <br/>
-            <hr/>
-            <h4>Durumbo Chief Executive Officer - Iulia Zaharia : Moldova</h4>
+            <br />
+
+            <h4 style={{ fontWeight: "bold" }}>Durumbo Chief Executive Officer - Iulia Zaharia : Moldova</h4>
             <h5>Created the innovative logo and manages the company</h5>
-            <hr/>
-            <h4>Durumbo Chief Technical Officer - Mohammad Hariri : Sweden</h4>
+            <br />
+
+            <h4 style={{ fontWeight: "bold" }}>Durumbo Chief Technical Officer - Mohammad Hariri : Sweden</h4>
             <h5>Our immigrant that the government forced us to employ</h5>
-            <hr/>
-            <h4>Durumbo Manager of Fredagsbar - Rasmus Jarnborg Friis : Denmark</h4>
+            <br />
+
+            <h4 style={{ fontWeight: "bold" }}>Durumbo Manager of Fredagsbar - Rasmus Jarnborg Friis : Denmark</h4>
             <h5>Some random drunk guy that smokes oregano in his office</h5>
-            <hr/>
-            <h4>Durumbo Chief Financial Officer - Andreas Guldborg Heick : Denmark</h4>
+            <br />
+
+            <h4 style={{ fontWeight: "bold" }}>Durumbo Chief Financial Officer - Andreas Guldborg Heick : Denmark</h4>
             <h5>Sends taxpayer money through Danske Bank Estonia to make Durumbo great again</h5>
-            <hr/>
-            <h4>Durumbo Danske Bank Estonia Contact Person - André Borchersen : Denmark</h4>
+            <br />
+
+            <h4 style={{ fontWeight: "bold" }}>Durumbo Danske Bank Estonia Contact Person - André Borchersen : Denmark</h4>
             <h5>Runs the Durumbo laundromat in Estonia, that is why he is always late</h5>
-            <hr/>
+            <hr />
 
         </div>
     );
@@ -166,8 +207,8 @@ function About() {
 
 function Home() {
     return (
-        <div style={{margin: 20}} >
-            <h3 style={{ fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#282c34', border: '1px solid grey', padding: '0.3em' }}>Restaurants</h3>
+        <div style={{ margin: 20 }} >
+            <h3 style={{ backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', textAlign: 'center', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Restaurants</h3>
             <RestaurantsPag />
         </div>
     );
