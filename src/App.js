@@ -33,6 +33,7 @@ class App extends Component {
 
     totalLogOut = () => {
         facade.logout()
+        this.setState({ hasLoggedIn: false });
     }
 
     Admin = () => {
