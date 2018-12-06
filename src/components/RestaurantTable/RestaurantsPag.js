@@ -21,7 +21,6 @@ export default class RestaurantTable extends Component {
 
     async componentDidMount() {
         try {
-            // let data = await facade.fetchSwapi();
             let data = await facade.getRestaurants();
             // data = data.filter((sw) => !sw.hasOwnProperty('error')); // catch errors at client instead of server
             // const data = await fetch(URL).then(handleHttpErrors)

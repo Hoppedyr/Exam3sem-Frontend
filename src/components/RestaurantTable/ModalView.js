@@ -36,7 +36,7 @@ export default class ModalView extends React.Component {
         width: '60%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        top: '2%',
+        top: '6%',
         left: '15%',
         right: '15%',
         bottom: '9%',

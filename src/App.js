@@ -17,19 +17,8 @@ import RestaurantsPag from "./components/RestaurantTable/RestaurantsPag";
 
 
 
-// const topics = [{ id: "topic-1", topic: <RestaurantsPag /> },
-// { id: "topic-2", topic: "topic 2" },
-// { id: "topic-3", topic: "Yet another Topic" },
-// { id: "topic-4", topic: "topic 4" }];
 
 class App extends Component {
-
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         hasLoggedIn: false
-    //     }
-    // }
 
 
     adminLogin = async (username, password) => {
@@ -44,7 +33,6 @@ class App extends Component {
 
     totalLogOut = () => {
         facade.logout()
-        this.setState({ hasLoggedIn: false });
     }
 
     Admin = () => {
@@ -89,9 +77,6 @@ class App extends Component {
                             <li>
                                 <NavLink to="/about"><span className="glyphicon glyphicon-info-sign"></span> About</NavLink>
                             </li>
-                            {/* <li>
-                                <NavLink to="/topics">Topics</NavLink>
-                            </li> */}
                             {facade.loggedIn() ? (
                                 <div>
                                     <li>
@@ -119,7 +104,6 @@ class App extends Component {
                         </ul>
                         <Route exact path="/" component={Home} />
                         <Route path="/about" component={About} />
-                        {/* <Route path="/topics" component={Topics} /> */}
                         <Route path="/login" render={() => (
                             facade.loggedIn() ? (
                                 <Redirect to="/admin" />
@@ -130,7 +114,6 @@ class App extends Component {
 
 
 
-                        {/* <Route path="m/admmin" component= {mAdmin}/> */}
                         {facade.loggedIn ? <Route path="/admin" component={this.Admin} /> : null}
                     </div>
                 </Router>
@@ -203,40 +186,5 @@ function Home() {
         </div>
     );
 }
-
-
-
-// function Topics({ match }) {
-//     const lis = topics.map(t => <li key={t.id}> <Link to={`${match.url}/${t.id}`}>{t.id}</Link> </li>);
-//     return (
-//         <div>
-//             <h2>Topics</h2>
-//             <ul>
-//                 {lis}
-//             </ul>
-
-
-//             <Route path={`${match.path}/:topicId`}
-//                 render={(props) =>
-//                     <Topic {...props} detail={topics.find(t => t.id === props.match.params.topicId)} />} />
-
-
-//             <Route
-//                 exact
-//                 path={match.path}
-//                 render={() => <h3>Please select a topic.</h3>}
-//             />
-//         </div>
-//     );
-// }
-
-// function Topic({ match, detail }) {
-//     return (
-//         <div>
-//             <h3>{match.params.topicId}</h3>
-//             <div>{detail.topic}</div>
-//         </div>
-//     );
-// }
 
 export default App;
