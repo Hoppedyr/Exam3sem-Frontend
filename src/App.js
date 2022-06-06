@@ -35,30 +35,6 @@ class App extends Component {
         facade.logout()
         this.setState({ hasLoggedIn: false });
     }
-
-    Admin = () => {
-        if (facade.loggedIn() === true) {
-            return (
-                <div>
-                    <CRUDTable />
-                </div>
-            );
-        } else {
-            return (
-                <div style={{ margin: 20, textAlign: "center" }}>
-                    <h3 style={{ backgroundColor: "#000000", fontWeight: "bold", borderRadius: '0.25em', color: '#BAFBFF', border: '1px solid grey', padding: '0.3em' }}>Admin Page</h3>
-                    <h4>ACCESS DENIED: NOT LOGGED IN</h4>
-                    <br />
-                    <span style={{ fontSize: 50 }} className="glyphicon glyphicon-eye-close"></span>
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                </div>
-            );
-        }
-
-
-
-
-    }
     render() {
         return (
             <div>
@@ -78,7 +54,7 @@ class App extends Component {
                             <li>
                                 <NavLink to="/about"><span className="glyphicon glyphicon-info-sign"></span> About</NavLink>
                             </li>
-                            {facade.loggedIn() ? (
+                          
                                 <div>
                                     <li>
                                         <NavLink to="/admin"><span className="glyphicon glyphicon-cog"></span> Admin Panel</NavLink>
@@ -95,32 +71,23 @@ class App extends Component {
 
                                     </li>
                                 </div>
-                            ) : (
-                                    <li className="float-right">
-                                        <NavLink to="/login">
-                                            <span className="glyphicon glyphicon-log-in"></span> Admin Login
-                                        </NavLink>
-                                    </li>
-                                )}
                         </ul>
                         <Route exact path="/" component={Home} />
                         <Route path="/about" component={About} />
-                        <Route path="/login" render={() => (
-                            facade.loggedIn() ? (
-                                <Redirect to="/admin" />
-                            ) : (
-                                    <LogIn login={this.adminLogin} />
-                                )
-                        )} />
-
-
-
-                        {facade.loggedIn ? <Route path="/admin" component={this.Admin} /> : null}
+                        <Route path="/admin" component={Admin} />
                     </div>
                 </Router>
             </div>
         );
     }
+}
+
+function Admin(){
+    return(
+        <div>
+            <CRUDTable />
+        </div>
+    )
 }
 
 

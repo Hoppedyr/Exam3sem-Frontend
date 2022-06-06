@@ -5,13 +5,11 @@ import AllRestaurants from "./AllRestaurants";
 import facade from '../../facades/CRUDFacade';
 
 class CRUDTable extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       restaurants: [],
-      editRestaurant:
-      {
+      editRestaurant: {
         id: "",
         restName: "",
         foodType: "",

@@ -1,0 +1,28 @@
+    [
+        {
+            "id": 11,
+            "restName": "test1",
+            "foodType": "pizza",
+            "website": "",
+            "street": "kbh",
+            "phone": "",
+            "pictureUrl": "",
+            "cityInfo": {
+                "zip": "2000",
+                "city": "kbh"
+            }
+        },
+        {
+            "id": 22,
+            "restName": "test2",
+            "foodType": "pizza",
+            "website": "",
+            "street": "kbh",
+            "phone": "",
+            "pictureUrl": "",
+            "cityInfo": {
+                "zip": "2000",
+                "city": "kbh"
+            }
+        }
+    ]

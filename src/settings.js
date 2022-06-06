@@ -1,14 +1,14 @@
 export const CRUDTABLEURL = "https://andreasheick.dk/durumbo/api"; // DATASERVER CHANGE TO BACKEND
 
 export const LogInURL = "https://andreasheick.dk/durumbo/";
-export const URLRestaurants = "https://andreasheick.dk/durumbo/api/info/allrestaurants";
+export const URLRestaurants = "data.json";
 export const URLDurumboRestaurants = "https://andreasheick.dk/durumbo/api/info/durumborestaurants/";
 
 export const editRestaurant = "https://andreasheick.dk/durumbo/api/info/edit"
-export const createRestaurant = "https://andreasheick.dk/durumbo/api/info/create"
+export const createRestaurant = "data.json"
 export const deleteRestaurant = "" // not Done
 export const getRestaurantById = "https://andreasheick.dk/durumbo/api/info/resturant/"
-export const getRestaurants = "https://andreasheick.dk/durumbo/api/info/durumborestaurants/"
+export const getRestaurants = "data.json"
 
 
 

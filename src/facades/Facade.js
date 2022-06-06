@@ -2,7 +2,7 @@ import { LogInURL, URLRestaurants } from "../settings";
 import jwtdecode from "jwt-decode";
 
 const URL = LogInURL;
-const URL2 = URLRestaurants;
+const URL2 = "data.json";
 
 async function handleHttpErrors(res) {
   if (!res.ok) {
@@ -24,18 +24,14 @@ class ApiFacade {
         'Accept': 'application/json',
       }
     }
-    if (addToken && this.loggedIn()) {
-      opts.headers["x-access-token"] = this.getToken();
-    }
-    if (body) {
-      opts.body = JSON.stringify(body);
-    }
     return opts;
   }
 
   getRestaurants = async () => {
     const options = this.makeOptions("GET", true);
-    return await fetch(URL2, options).then(handleHttpErrors);
+    var test = await fetch(URL2, options).then(handleHttpErrors);
+    console.log(test);
+    return test;
   }
 
   // fetchSwapi = () => {
